@@ -1,18 +1,31 @@
 import styled from "styled-components"
 import Input from "../components/Input"
+import Form from "../components/Form"
+import Button from "../components/Button"
 
-const StyledNotFoundMessage = styled.h1`
+const LoginPageTitle = styled.h1`
+  font-size: 20px;
+  margin-bottom: 20px;
+`
+
+const LoginPageWrapper = styled.section`
   display: flex;
   align-items: center;
+  width: 100%;
   flex-direction: column;
-  margin-top: 40vh;
+
 `
 
 export default function LoginPage() {
   return (
-    <div>
-      <Input placeholder="Логин"/>
-      <Input placeholder="Пароль"/>
-    </div>
+    <LoginPageWrapper>
+      <LoginPageTitle>Вход</LoginPageTitle>
+      <Form>
+        <Input placeholder="Логин"/>
+        <Input placeholder="Пароль"/>
+        <Button>Войти</Button>
+      </Form>
+    </LoginPageWrapper>
+    
   )
 }

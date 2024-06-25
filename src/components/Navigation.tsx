@@ -3,12 +3,12 @@ import styled from "styled-components"
 
 const StyledNavigation = styled.nav`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 60px;
     align-items: center;
 `
 
-const StyledNavLink = styled.a`
+const StyledNavLink = styled(NavLink)`
     color: black;
     font-weight: 700;
 `
@@ -18,11 +18,12 @@ const StyledNavLink = styled.a`
 export default function Navigation() {
   return (
     <StyledNavigation>
-        <NavLink to='/'>
-            <StyledNavLink href="#">
-                Войти
-            </StyledNavLink>
-        </NavLink>
+        <StyledNavLink to='/'>
+            React Posts
+        </StyledNavLink>
+        <StyledNavLink to='/'>
+            Войти
+        </StyledNavLink>
     </StyledNavigation>
   )
 }
