@@ -4,8 +4,7 @@ import Form from "../components/Form"
 import Button from "../components/Button"
 
 const LoginPageTitle = styled.h1`
-  font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `
 
 const LoginPageWrapper = styled.section`

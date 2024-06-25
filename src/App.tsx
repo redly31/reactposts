@@ -5,7 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Navigation from "./components/Navigation";
 
 export default function App() {
-  const session = false;
+  const session = true;
   return (
     <BrowserRouter>
       <Navigation/>

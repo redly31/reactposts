@@ -11,10 +11,15 @@ const StyledButton = styled.button`
     width: 125px;
 `
 
-export default function Button({children}: {children: React.ReactNode}) {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+
+export default function Button({children, onClick}: ButtonProps) {
   return (
-    <StyledButton>
-        {children}
+    <StyledButton type="button" onClick={onClick}>
+      {children}
     </StyledButton>
   )
 }
