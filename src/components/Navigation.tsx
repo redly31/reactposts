@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../helpers/context";
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -14,13 +16,13 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 export default function Navigation() {
-  const session = true;
+  const { isAuth, setIsAuth } = useContext(AuthContext)!;
 
   return (
     <StyledNavigation>
       <StyledNavLink to="/">React Posts</StyledNavLink>
-      {session ? (
-        <StyledNavLink to="/">Выйти</StyledNavLink>
+      {isAuth ? (
+        <StyledNavLink to="/" onClick={() => setIsAuth(!isAuth)}>Выйти</StyledNavLink>
       ) : (
         <StyledNavLink to="/">Войти</StyledNavLink>
       )}
